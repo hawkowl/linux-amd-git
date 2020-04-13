@@ -9,19 +9,19 @@
 pkgbase=linux-amd-git
 pkgdesc='Linux kernel with AMDGPU DC patches'
 _srcname=${pkgbase}
-_branch=FETCH_HEAD
+_branch=agd5f/drm-next
 _kernelname=${pkgbase#linux}
-pkgver=5.7.1.1d2686d41
+pkgver=5.7
 pkgrel=1
 arch=(x86_64)
-url='https://cgit.freedesktop.org/~agd5f/linux/'
+url='/home/hawkowl/code/linux'
 license=(GPL2)
 makedepends=(
   bc kmod libelf
   git
 )
 options=('!strip')
-source=("${pkgbase}::git://people.freedesktop.org/~agd5f/linux#branch=${_branch}"
+source=("${pkgbase}::git+file:///home/hawkowl/code/linux?branch=${branch}"
   config         # the main kernel config file
 )
 sha256sums=('SKIP'
