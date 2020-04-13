@@ -9,10 +9,9 @@
 pkgbase=linux-amd-git
 pkgdesc='Linux kernel with AMDGPU DC patches'
 _srcname=${pkgbase}
-_kernel_rel=5.6
-_branch=drm-fixes-${_kernel_rel}
+_branch=FETCH_HEAD
 _kernelname=${pkgbase#linux}
-pkgver=5.6.888851.7b19914383fc
+pkgver=5.7.1.1d2686d41
 pkgrel=1
 arch=(x86_64)
 url='https://cgit.freedesktop.org/~agd5f/linux/'
@@ -26,7 +25,8 @@ source=("${pkgbase}::git://people.freedesktop.org/~agd5f/linux#branch=${_branch}
   config         # the main kernel config file
 )
 sha256sums=('SKIP'
-            'a8e4a57ca3ed7c525f79f350cb6f862a1a3f6047af92432885bdc8155736e5ab')
+#            'a8e4a57ca3ed7c525f79f350cb6f862a1a3f6047af92432885bdc8155736e5ab')
+	'SKIP')
 pkgver() {
   cd "${_srcname}"
   local version="$(grep \^VERSION Makefile|cut -d"=" -f2|cut -d" " -f2)"
