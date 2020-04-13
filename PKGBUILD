@@ -9,9 +9,9 @@
 pkgbase=linux-amd-git
 pkgdesc='Linux kernel with AMDGPU DC patches'
 _srcname=${pkgbase}
-_branch=agd5f/drm-next
+_branch="drm-next"
 _kernelname=${pkgbase#linux}
-pkgver=5.7
+pkgver=5.7.904363.552f15a96825
 pkgrel=1
 arch=(x86_64)
 url='/home/hawkowl/code/linux'
@@ -21,7 +21,7 @@ makedepends=(
   git
 )
 options=('!strip')
-source=("${pkgbase}::git+file:///home/hawkowl/code/linux#branch=${branch}"
+source=("${pkgbase}::git+file:///home/hawkowl/code/linux#branch=${_branch}"
   config         # the main kernel config file
 )
 sha256sums=('SKIP'
