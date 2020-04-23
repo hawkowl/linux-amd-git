@@ -21,7 +21,7 @@ makedepends=(
   git
 )
 options=('!strip')
-source=("${pkgbase}::${_branch}.tar.gz"
+source=("${_branch}.tar.gz"
   config         # the main kernel config file
 )
 sha256sums=('SKIP'
