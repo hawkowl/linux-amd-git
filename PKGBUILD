@@ -11,7 +11,7 @@ pkgdesc='Linux kernel with AMDGPU DC patches'
 _srcname=${pkgbase}
 _branch="drm-next"
 _kernelname=${pkgbase#linux}
-pkgver=5.7.49.126fb39
+pkgver=5.6.0
 pkgrel=1
 arch=(x86_64)
 url='/home/hawkowl/code/linux'
@@ -31,9 +31,10 @@ pkgver() {
   cd "${_srcname}"
   local version="$(grep \^VERSION Makefile|cut -d"=" -f2|cut -d" " -f2)"
   local patch="$(grep \^PATCHLEVEL Makefile|cut -d"=" -f2|cut -d" " -f2)"
-  patch=$(( $patch + 1 ))
+  local sublevel="$(grep \^SUBLEVEL Makefile|cut -d"=" -f2|cut -d" " -f2)"
 
-  echo $version.$patch.$(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+
+  echo $version.$patch.$sublevel
 }
 
 export KBUILD_BUILD_HOST=archlinux
