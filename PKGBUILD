@@ -9,12 +9,12 @@
 pkgbase=linux-amd-git
 pkgdesc='Linux kernel with AMDGPU DC patches'
 _srcname=${pkgbase}
-_branch="drm-next"
+_branch="linux"
 _kernelname=${pkgbase#linux}
 pkgver=5.8.0
 pkgrel=1
 arch=(x86_64)
-url='/home/hawkowl/code/linux'
+url='https://github.com/hawkowl/linux-amd-git'
 license=(GPL2)
 makedepends=(
   bc kmod libelf
